@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Help is on the way</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Alert_icon-72a7cf.svg/1024px-Alert_icon-72a7cf.svg.png">
+
+    {% for message in get_flashed_messages() %}
+             <h1></h1><p style="font-family: Arial; font-size:25px">{{ message }}</p></h1>
+         {% endfor %}
+    
+</body>
+</html>
