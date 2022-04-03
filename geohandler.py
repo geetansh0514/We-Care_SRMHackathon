@@ -17,12 +17,8 @@ def getUserLoc():
     loc = [fresponse['latitude'],fresponse['longitude'] ]
     return([fresponse['latitude'],fresponse['longitude']])
     
-def getNearestHospitals():
-    
-    fresponse = requests.get('https://freegeoip.app/json/').json()
-    loc = [fresponse['latitude'],fresponse['longitude'] ]
-
-    print("Your Current Coordinates are : ",loc[0],loc[1])
+def getNearestHospitals(lat,lon):
+    loc = [lat,lon]
 
     API_KEY = 'xRV3hllT0sjTNaxj2jKTGO22qnYKqA1QDPqQdhFUUvg'
     
@@ -38,12 +34,6 @@ def getNearestHospitals():
     return(rt)
     #print(data)
     
-    
-
-a = getNearestHospitals()
-print("A",a)
-
-b = getUserLoc()
 
 def getRouteDistance(lat1,lng1,lat2,lng2):
     
@@ -57,6 +47,3 @@ def getRouteDistance(lat1,lng1,lat2,lng2):
     print("Distance in meters : ",route_1['distance'])
     print("Duration to reach there : ",route_1['duration'])
     return(route_1['distance'],route_1['duration'])
-
-
-getRouteDistance(b[0],b[1],a[0][1],a[0][2])    

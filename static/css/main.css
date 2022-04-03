@@ -1,7 +1,8 @@
 body {
     text-align: center;
-background-color: white;
-
+    background-image: url("https://i.imgur.com/1sgjGkm.gif");
+    background-position: center center; 
+    background-size: cover;
 }
 p {
     color: black;
@@ -39,4 +40,4 @@ input:focus {
 
 #greet:hover {
     background-color: rgb(151, 10, 10);
-}
+}   

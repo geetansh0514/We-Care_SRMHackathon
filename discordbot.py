@@ -2,13 +2,13 @@ import discord
 import requests
 import datetime
 import os
+import sys
 
 def getUserLoc():
         
     fresponse = requests.get('https://freegeoip.app/json/').json()
     loc = [fresponse['latitude'],fresponse['longitude'] ]
     return([fresponse['latitude'],fresponse['longitude']])
-
 
 
 def Alert(userLoc):
@@ -39,10 +39,11 @@ def Alert(userLoc):
         embedhelp1.set_image(url = 'https://media.istockphoto.com/vectors/hand-drawn-doodle-ambulance-illustration-with-cartoon-style-vector-vector-id1196743845')
         embedhelp1.set_footer(text = "----------------------------------------------------------------" ,icon_url="https://www.pngall.com/wp-content/uploads/2017/05/Alert-PNG-Images.png")
         await general.send(embed = embedhelp1)
-        
+
+
     client.run(os.environ['TOKEN'])
     client.close()
-    
-m = getUserLoc()
-print("User Ip sent through discord - ",m[0],m[1])
-Alert([m[0],m[1]])
+m = getUserLoc()    
+
+print("User Ip sent through discord - ",sys.argv[1],sys.argv[2])
+Alert([sys.argv[1],sys.argv[2]])
