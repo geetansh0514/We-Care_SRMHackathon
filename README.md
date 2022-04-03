@@ -1,2 +1,2 @@
 # We-Care_SRMHackathon
-SRM Hackathon 2021 Submission
+SRM Hackathon 2022 Submission
