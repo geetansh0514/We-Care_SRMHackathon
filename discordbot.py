@@ -29,7 +29,7 @@ def Alert(userLoc):
     async def on_connect():
         print("Acci-Saver with id",client.user," initialized with latency ",client.latency,"\nListening for new messages.\n")
         await client.change_presence(activity=discord.Activity(type=discord.ActivityType.streaming, name="Get Help",url = "https://acci-saver.herokuapp.com/"))
-        general = client.get_channel(909150527022051408)
+        general = client.get_channel(960084207139446844)
         now = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         tz = datetime.datetime.now(datetime.timezone.utc).astimezone().tzname()
         
